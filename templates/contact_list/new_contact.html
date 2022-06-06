@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact List {% endblock %}
+
+{% block style %}
+
+.form-control{
+    height: 29px;
+}
+
+.form-label{
+    padding: 6px;
+}
+
+{% endblock %}
+
+
+{% block body %}
+
+<form method="post" action="/new_contact/">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="name" class="form-label"><h6>Name:</h6></label>
+    <input type="text" class="form-control" id="name"  name="name" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label"><h6>Email:</h6></label>
+    <input type="email" class="form-control" id="email" name="email">
+  </div>
+
+
+  <div class="mb-3">
+    <label for="mobile_number" class="form-label"><h6>Mobile Number:</h6></label>
+    <input type="tel" class="form-control" id="mobile_number"  name="mobile_number" required >
+  </div>
+
+  <div class="mb-3">
+    <label for="phone_number" class="form-label"><h6>Phone Number:</h6></label>
+    <input type="tel" class="form-control" id="phone_number"  name="phone_number">
+  </div>
+
+  <div class="mb-3">
+    <label for="note" class="form-label"><h6>Note:</h6></label>
+    <input type="text" class="form-control" id="note"  name="note">
+  </div>
+
+    <div class="text-center my-3">
+  <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>
+
+{% endblock %}

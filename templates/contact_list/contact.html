@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact List {% endblock %}
+
+{% block style %}
+
+p{
+    margin-left: 9px;
+    font-size: 23px;
+}
+
+{% endblock %}
+
+{% block body %}
+
+<div>
+    <h6>Name:</h6>
+    <br>
+    <p>{{contact.name}}</p>
+    <hr>
+</div>
+
+<div>
+    <h6>Email:</h6>
+    <br>
+    <p>{{contact.email}}</p>
+    <hr>
+</div>
+
+<div>
+    <h6>Mobile number:</h6>
+    <br>
+    <p>{{contact.mobile_number}}</p>
+    <hr>
+</div>
+
+<div>
+    <h6>Phone number:</h6>
+    <br>
+    <p>{{contact.phone_number}}</p>
+    <hr>
+</div>
+
+<div>
+    <h6>Note:</h6>
+    <br>
+    <p>{{contact.note}}</p>
+    <hr>
+</div>
+
+<div class=" container my-3 mx-5">
+
+    <a href="/edit/{{contact.people_id}}"> <button type="button" id="edit" class="btn btn-primary btn-lg">Edit</button></a>
+
+    <a href="/delete/{{contact.people_id}}"><button type="button" class="btn btn-danger btn-lg">Delete</button></a>
+</div>
+
+{% endblock %}
